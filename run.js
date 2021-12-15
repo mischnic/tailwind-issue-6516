@@ -5,5 +5,6 @@ const tailwindcss = require("tailwindcss");
 postcss([tailwindcss(__dirname + "/tailwind.config.js")])
   .process(fs.readFileSync(__dirname + "/src/index.css", "utf8"))
   .then((result) => {
-    console.log(result.messages);
+    console.log("Messages:", result.messages);
+    console.log("\nCode:", result.css);
   });
